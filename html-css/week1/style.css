@@ -1,0 +1,104 @@
+body {
+  font-family: sans-serif;
+  font-size: 13px;
+  margin: 0 auto;
+  width: 800px;
+  display: flex;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+h1 {
+  font-size: 42px;
+  text-transform: uppercase;
+  width: 50%;
+}
+
+h2 {
+  font-size: 18px;
+  text-transform: uppercase;
+  color: cornflowerBlue;
+}
+
+h3 {
+  font-size: 16px;
+  margin: 3px auto;
+  color: cornflowerBlue;
+}
+
+.subtitle {
+  color: black;
+}
+
+i {
+  color: cornflowerBlue;
+  margin: 5px;
+}
+
+a {
+  color: grey;
+}
+
+hr {
+  border: 1px solid cornflowerBlue;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.left {
+  background-color: lightgrey;
+  flex: 30%;
+  border-radius: 20px;
+  margin: 0 20px;
+  min-height: 100vh;
+}
+
+.left section {
+ margin: 5px auto;
+ width: 70%;
+}
+
+img {
+  display: block;
+  width:150px;
+  height:150px;
+  margin: 20px auto;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px grey;
+}
+
+main {
+  flex: 70%;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+}
+
+main article {
+  display: block;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  padding: 0 5px;
+}
+
+main h2 {
+  margin-bottom: 5px;
+}
+
+main p {
+  margin: 5px auto;
+}
+
+.time {
+  padding-right: 100px;
+}
+
+.skills {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+.skills li{
+  margin: 5px;
+}
