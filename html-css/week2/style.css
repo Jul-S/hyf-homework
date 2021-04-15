@@ -1,0 +1,107 @@
+/** Styles for mobile device */
+body {
+  font-family: sans-serif;
+  margin: 0px;
+}
+
+h1, h2, h3, h4 {
+  text-transform: uppercase;
+}
+
+header p, main p {
+  color: grey;
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+a:hover {
+  color: darkgrey;
+}
+
+header {
+  background-color: whitesmoke;
+  border-bottom: 1px solid lightgrey;
+  padding: 20px 20px 50px 50px;
+}
+
+.top-nav {
+  text-transform: lowercase;
+  font-weight: bold;
+  padding: 20px 40px;
+}
+
+img {
+  width: 100%;
+  margin: 0px;
+}
+
+article, aside {
+  padding: 50px;
+}
+
+.logotypes {
+  display: flex;
+  flex-wrap:wrap;
+}
+
+.logotypes a {
+  flex: 25%;
+}
+
+footer {
+  background-color: #6736CD;
+  color: white;
+}
+
+footer section {
+  padding: 40px;
+  width: 300px;
+}
+
+footer li {
+  padding: 20px 0px;
+  border-bottom: 1px solid grey;
+}
+
+/** Styles for screens larger than 600px */
+
+@media screen and (min-width: 600px) {
+  .top-nav ul, main > section, .bottom-text {
+    display: flex;
+  }
+
+  .top-nav li {
+    padding-left: 20px;
+  }
+  
+  .main-text {
+    flex-direction: row-reverse;
+  }
+
+  main aside {
+    flex: 30%;
+  }
+
+  main article {
+    flex: 70%;
+  }
+
+}
+
+/** Styles for screens larger than 10800px */
+
+@media screen and (min-width: 1080px) {
+  .header-text, .top-nav, main, .bottom-text {
+    width: 1080px;
+    margin: auto;
+  }
+}
