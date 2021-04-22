@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>Sign up Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="logo.jpg" alt="Logo" style="height:100px;width:100px;">
+    <nav>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Contacts</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Sign up to yourcustomtailor.com</h1>
+    <!---- Below I use radio inputs as tabs for Steps ----->
+    <input type="radio" name="tabs" id="tab1" checked />
+    <label for="tab1">Step 1</label>
+    <input type="radio" name="tabs" id="tab2" />
+    <label for="tab2">Step 2</label>
+    <input type="radio" name="tabs" id="tab3" />
+    <label for="tab3">Step 3</label>
+    <input type="radio" name="tabs" id="tab4"/>
+    <label for="tab4">Step 4</label>
+    <!----Each form is on separate tab ---->
+    <!----Step 1  ---->
+    <div class="tab content1">
+      <p>We can't wait to help you improve your life-style and gain the attention
+        from people around you!</p>
+        <p>Sign up below to save up to 70% on apparel, hand-bags and cosmetics. Our agents are busy
+          picking the best offers that match your preferences and style. Every week we will send you a
+          hand-picked selection - we just need to know a few details about your first...</p>
+          <h2>Step 1/4 - tell us who you are?</h2>
+          <h4>Progress</h4>
+          <div class="progressbar">
+            <div class="progress-step1"></div>
+          </div>
+          <p>Nice to meet you. Let's spend a minute to get to know each other? Please enter the following:</p>
+          <!----Form 1  ---->
+          <form class="form1" action="index.html" method="post">
+            <div class="form-row">
+              <div class="form-col1">
+                <label for="fname">First Name*</label>
+                <input type="text" id="fname" name="fname">
+              </div>
+              <div class="form-col2">
+                <label for="lname">Last Name*</label>
+                <input type="text" id="lname" name="lname">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-col1">
+                <label for="country">Country*</label>
+                <select id="country" name="country" class="form-control">
+                  <option value="Afghanistan">Afghanistan</option>
+                  <option value="Åland Islands">Åland Islands</option>
+                  <option value="Albania">Albania</option>
+                  <option value="Algeria">Algeria</option>
+                  <option value="American Samoa">American Samoa</option>
+                </select>
+              </div>
+              <div class="form-col2">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-col1">
+                <label for="street">Street address*</label>
+                <input type="text" id="street" name="street">
+              </div>
+              <div class="form-col2">
+                <label for="postcode">Post code*</label>
+                <input type="text" id="postcode" name="postcode">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-col-25">
+                <label for="description">Profile description*
+                  <p class="decs">Please provide a short description of yourself to be
+                    displayed on our social community pages.
+                  </p>
+                </label>
+              </div>
+              <div class="form-col-75">
+              <input type="textarea" id="description" name="description">
+            </div>
+            </div>
+            <p>Use the same address for billing and shipping? Uncheck below
+              to fill out a separate shipping address.</p>
+            <div class="form-row">
+                <div class="form-col1">
+                  <label for="shipping">Shipping address</label>
+                  <input type="checkbox" id="shipping" name="shipping">
+                </div>
+                <div class="form-col2">
+                </div>
+            </div>
+
+            <!-- THis button won`t work for switching tabs! -->
+              <a class="button" href="#tab2">Next Step</a>
+
+            </form>
+          </div>
+          <!----Step2  ---->
+          <div class="tab content2">
+            <h2>Step 2/4 - how can we reach you?</h2>
+            <h4>Progress</h4>
+            <div class="progressbar">
+              <div class="progress-step2"></div>
+              <!----Form 2  ---->
+            </div>
+          </div>
+          <!----Step3  ---->
+          <div class="tab content3">
+            <h2>Step 3/4 - Time to learn about your preferences?</h2>
+            <h4>Progress</h4>
+            <div class="progressbar">
+              <div class="progress-step3"></div>
+            </div>
+            <!----Form 3  ---->
+          </div>
+          <!----Step4 disabled ---->
+          <div class="tab content4">
+            <h2>Step 4/4 - Payment</h2>
+            <h4>Progress</h4>
+            <div class="progressbar">
+              <div class="progress-step4"></div>
+            </div>
+          </div>
+        </main>
+      </body>
+      </html>

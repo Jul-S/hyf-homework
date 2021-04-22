@@ -1,0 +1,178 @@
+body {
+  font-family: sans-serif;
+  width: 800px;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul {
+  text-transform: uppercase;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  padding-left: 1em;
+}
+
+h4 {
+  margin-bottom: 0;
+}
+/*Styling div as progress bar*/
+.progressbar {
+  background: lightgrey;
+  border-radius: 0.2em;
+  height:1.5em;
+  width:100%;
+  color: white;
+}
+
+.progress-step1 {
+  background: grey;
+  height:1.5em;
+  border-radius: 0.2em;
+  animation: step1 3s ease-in-out;
+  width: 25%;
+}
+.progress-step2 {
+  background: grey;
+  height:1.5em;
+  border-radius: 0.2em;
+  animation: step2 3s ease-in-out;
+  width: 50%;
+}
+.progress-step3 {
+  background: grey;
+  height:1.5em;
+  border-radius: 0.2em;
+  animation: step3 3s ease-in-out;
+  width: 75%;
+}
+
+.progress-step4 {
+  background: grey;
+  height:1.5em;
+  border-radius: 0.2em;
+  animation: step4 3s ease-in-out;
+  width: 100%;
+}
+/** Animation of steps in progress bar**/
+@keyframes step1 {
+  0% { width: 0; }
+  100% { width: 25%; }
+}
+
+@keyframes step2 {
+  0% { width: 25%; }
+  100% { width: 50%; }
+}
+
+@keyframes step3 {
+  0% { width: 50%; }
+  100% { width: 75%; }
+}
+
+@keyframes step4 {
+  0% { width: 75%; }
+  100% { width: 100%; }
+}
+
+/**Styling tabs from inputs**/
+main > input[type="radio"] {
+  display: none; /* hide radio buttons */
+}
+
+main > input[type="radio"]:disabled {
+  pointer-events: none;
+}
+
+main > input[type="radio"] + label {
+  display: inline-block; /* show labels in line */
+  border: 1px solid #999;
+  background: #EEE;
+  padding: 0.5em 3em;
+  border-radius: 0.3em 0.3em 0 0; /* Rounded box for tabs*/
+  position: relative;
+  top: 0.1em;
+  text-transform: uppercase;
+  color: darkgrey;
+}
+main > input[type="radio"] ~ .tab {
+  display: none; /* hide contents */
+  border-top: 1px solid #999; /* grey line between tab and contents */
+  padding: 1em;
+}
+/* show contents only for selected tab */
+#tab1:checked ~ .tab.content1,#tab2:checked ~ .tab.content2,
+#tab3:checked ~ .tab.content3, #tab4:checked ~ .tab.content4 {
+  display: block;
+}
+
+main > input[type="radio"]:checked + label {     /* white background for selected tab */
+  background: #FFF;
+  border-bottom: 1px solid transparent;
+  color: black;           /* black text color for selected tab */
+}
+
+/**Styling form elements**/
+form label {
+  /* margin-left: 1em; */
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.form-row {
+  display: flex;
+}
+
+.form-col1, .form-col2 {
+  flex: 50%;
+  text-align: right;
+}
+
+.form-col-25 {
+  flex: 25%;
+  text-align: right;
+}
+
+.form-col-75 {
+  flex: 75%;
+}
+
+.description input {
+  height: 10em;
+}
+
+form input[type="text"] {
+  width: 15em;
+  height: 2em;
+  margin-bottom: 1em;
+}
+
+form select {
+  width: 15em;
+  height: 2.5em;
+  margin-bottom: 1em;
+}
+
+label > p {
+  font-size: 0.8em;
+  font-weight: normal;
+  font-style: italic;
+}
+
+div .button {
+  background-color: grey;
+  width: auto;
+  float: right;
+  padding: 2em;
+  margin: 2em;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
