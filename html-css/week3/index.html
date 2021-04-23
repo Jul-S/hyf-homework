@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <img src="logo.jpg" alt="Logo" style="height:100px;width:100px;">
+    <img src="logo.jpg" alt="Logo" width=100px>
     <nav>
       <ul>
         <li><a href="#">About</a></li>
@@ -21,8 +21,9 @@
   <main>
     <h1>Sign up to yourcustomtailor.com</h1>
     <!---- Below I use radio inputs as tabs for Steps ----->
+    <!-- Ths part is an extra instructions in Homework3 - making TABs instead of  3 linked files -->
     <input type="radio" name="tabs" id="tab1" checked />
-    <label for="tab1">Step 1</label>
+    <label for="tab1" id="tab2label">Step 1</label>
     <input type="radio" name="tabs" id="tab2" />
     <label for="tab2">Step 2</label>
     <input type="radio" name="tabs" id="tab3" />
@@ -45,94 +46,165 @@
           <p>Nice to meet you. Let's spend a minute to get to know each other? Please enter the following:</p>
           <!----Form 1  ---->
           <form class="form1" action="index.html" method="post">
-            <div class="form-row">
-              <div class="form-col1">
-                <label for="fname">First Name*</label>
-                <input type="text" id="fname" name="fname">
-              </div>
-              <div class="form-col2">
-                <label for="lname">Last Name*</label>
-                <input type="text" id="lname" name="lname">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-col1">
-                <label for="country">Country*</label>
-                <select id="country" name="country" class="form-control">
-                  <option value="Afghanistan">Afghanistan</option>
-                  <option value="Åland Islands">Åland Islands</option>
-                  <option value="Albania">Albania</option>
-                  <option value="Algeria">Algeria</option>
-                  <option value="American Samoa">American Samoa</option>
-                </select>
-              </div>
-              <div class="form-col2">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-col1">
-                <label for="street">Street address*</label>
-                <input type="text" id="street" name="street">
-              </div>
-              <div class="form-col2">
-                <label for="postcode">Post code*</label>
-                <input type="text" id="postcode" name="postcode">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-col-25">
-                <label for="description">Profile description*
-                  <p class="decs">Please provide a short description of yourself to be
-                    displayed on our social community pages.
-                  </p>
+            <div class="form-grid">
+              <label for="fname" class="grid-col1">First Name*</label>
+              <input type="text" class="grid-col2" id="fname" name="fname" required>
+              <label for="lname" class="grid-col3">Last Name*</label>
+              <input type="text" class="grid-col4" id="lname" name="lname" required>
+              <label for="country" class="grid-col1">Country*</label>
+              <select id="country" class="grid-col2" name="country" class="form-control" required>
+                <option value="">None</option>
+                <option value="Afghanistan">Afghanistan</option>
+                <option value="Åland Islands">Åland Islands</option>
+                <option value="Albania">Albania</option>
+                <option value="Algeria">Algeria</option>
+                <option value="American Samoa">American Samoa</option>
+              </select>
+              <label for="street" class="grid-col1">Street address*</label>
+              <input type="text" class="grid-col2" id="street" name="street" required>
+              <label for="postcode">Post code*</label>
+              <input type="text" id="postcode" name="postcode" maxlength="4" required>
+              <label for="description">Profile description
+                <p> class="decs">Please provide a short description of yourself to be
+                  displayed on our social community pages.</p>
                 </label>
+                <textarea name="description" maxlength=500 rows="10" cols="100"></textarea>
               </div>
-              <div class="form-col-75">
-              <input type="textarea" id="description" name="description">
-            </div>
-            </div>
-            <p>Use the same address for billing and shipping? Uncheck below
-              to fill out a separate shipping address.</p>
-            <div class="form-row">
-                <div class="form-col1">
-                  <label for="shipping">Shipping address</label>
-                  <input type="checkbox" id="shipping" name="shipping">
-                </div>
-                <div class="form-col2">
-                </div>
-            </div>
+              <p>Use the same address for billing and shipping? Uncheck below
+                to fill out a separate shipping address.</p>
+                <label for="shipping">Shipping address</label>
+                <input type="checkbox" id="shipping" name="shipping">
 
-            <!-- THis button won`t work for switching tabs! -->
-              <a class="button" href="#tab2">Next Step</a>
+                <!-- THis button won`t work for switching - use tabs instead -->
+                <!-- But it will trigger form fields validation -->
+                <input type="submit" name="submit" value="Next Step">
+              </form>
+            </div>
+            <!----Step2  ---->
+            <div class="tab content2"name="submit" >
+              <h2>Step 2/4 - how can we reach you?</h2>
+              <h4>Progress</h4>
+              <div class="progressbar">
+                <div class="progress-step2"></div>
+                <!----Form 2  ---->
+                <form class="form2" action="index.html" method="post">
+                  <p>We will probably need to stay in touch somehow. Let is know
+                    how we can reach you?</p>
+                    <div class="form-grid">
+                      <label for="email" class="grid-col1">Email*</label>
+                      <input type="email" class="grid-col2" id="email" name="email" required>
+                      <label for="phone" class="grid-col3">Phone*</label>
+                      <input type="tel" class="grid-col4" id="phone" name="phone" required>
+                      <label for="password" class="grid-col1" pattern="^(?=.*[a-z])(?=.*[A-Z]).{10,}$">Password*</label>
+                      <input type="password" class="grid-col2" id="password" name="password" required>
+                      <label for="repassword" class="grid-col1">Re-enter Password*</label>
+                      <input type="password" class="grid-col2" id="repassword" name="repassword" required>
+                    </div>
+                    <p>| want to sign up for the newsletter</p>
+                    <label for="weekly">Weekly news</label>
+                    <input type="radio" name="news" id="weekly" checked />
+                    <label for="monthly" id="monthly">Monthly news</label>
+                    <input type="radio" name="news" id="monthly"/>
+                    <label for="dont" id="dont">Don`t send me news</label>
+                    <input type="radio" name="news" id="dont" />
 
-            </form>
-          </div>
-          <!----Step2  ---->
-          <div class="tab content2">
-            <h2>Step 2/4 - how can we reach you?</h2>
-            <h4>Progress</h4>
-            <div class="progressbar">
-              <div class="progress-step2"></div>
-              <!----Form 2  ---->
-            </div>
-          </div>
-          <!----Step3  ---->
-          <div class="tab content3">
-            <h2>Step 3/4 - Time to learn about your preferences?</h2>
-            <h4>Progress</h4>
-            <div class="progressbar">
-              <div class="progress-step3"></div>
-            </div>
-            <!----Form 3  ---->
-          </div>
-          <!----Step4 disabled ---->
-          <div class="tab content4">
-            <h2>Step 4/4 - Payment</h2>
-            <h4>Progress</h4>
-            <div class="progressbar">
-              <div class="progress-step4"></div>
-            </div>
-          </div>
-        </main>
-      </body>
-      </html>
+                    <!-- THis button won`t work for switching - use tabs instead -->
+                    <!-- But it will trigger form fields validation -->
+                    <input type="submit" name="submit" value="Next Step">
+                  </form>
+                </div>
+              </div>
+              <!----Step3  ---->
+              <div class="tab content3">
+                <h2>Step 3/4 - Time to learn about your preferences?</h2>
+                <h4>Progress</h4>
+                <div class="progressbar">
+                  <div class="progress-step3"></div>
+                </div>
+                <!----Form 3  ---->
+                <form class="form3" action="index.html" method="post">
+                  What kind of items are you interested in offers on?
+                  <div class="form-grid">
+                    <div class="grid-col1">
+                      <label for="apparal">Apparal</label>
+                      <input type="checkbox" id="apparal" name="apparal">
+                    </div>
+                    <div class="grid-col2">
+                      <label for="jewelry">Jewelry</label>
+                      <input type="checkbox" id="jewelry" name="jewelry">
+                    </div>
+                    <div class="grid-col1">
+                      <label for="accessories">Accessories</label>
+                      <input type="checkbox" id="accessories" name="accessories">
+                    </div>
+                    <div class="grid-col2">
+                      <label for="shoes">Shoes</label>
+                      <input type="checkbox" id="shoes" name="shoes">
+                    </div>
+                    <div class="grid-col1">
+                      <label for="handbags">Handbags</label>
+                      <input type="checkbox" id="handbags" name="handbags">
+                    </div>
+                  </div>
+                  <p>Choose the images that best resemble your style</p>
+                  <div class="form-grid">
+                    <div class="grid-col1">
+                      <img class="image-select" width="100%" src="logo.jpg"/><br/>
+                      <label for="image1">Select</label>
+                      <input type="checkbox" id="image1" name="select-image">
+                    </div>
+                    <div class="grid-col2">
+                      <img width="100%" src="logo.jpg"/><br/>
+                      <label for="image2">Select</label>
+                      <input type="checkbox" id="image2" name="select-image">
+                    </div>
+                    <div class="grid-col3">
+                      <img width="100%" src="logo.jpg"/><br/>
+                      <label for="image3">Select</label>
+                      <input type="checkbox" id="image3" name="select-image">
+                    </div>
+                    <div class="grid-col4">
+                      <img width="100%" src="logo.jpg"/><br/>
+                      <label for="image4">Select</label>
+                      <input type="checkbox" id="image4" name="select-image">
+                    </div>
+                    <div class="grid-col1">
+                      <img width="100%" src="logo.jpg"/><br/>
+                      <label for="image5">Select</label>
+                      <input type="checkbox" id="image5" name="select-image">
+                    </div>
+                    <div class="grid-col2">
+                      <img width="100%" src="logo.jpg"/><br/>
+                      <label for="image6">Select</label>
+                      <input type="checkbox" id="image6" name="select-image">
+                    </div>
+                    <div class="grid-col3">
+                      <img width="100%" src="logo.jpg"/><br/>
+                      <label for="image7">Select</label>
+                      <input type="checkbox" id="image7" name="select-image">
+                    </div>
+                    <div class="grid-col4">
+                      <img width="100%" src="logo.jpg"/><br/>
+                      <label for="image8">Select</label>
+                      <input type="checkbox" id="image8" name="select-image">
+                    </div>
+                  </div>
+                  <!-- THis button won`t work for switching - use tabs instead -->
+                  <!-- But it will trigger form fields validation -->
+                  <input type="submit" name="submit" value="Next Step">
+                </form>
+              </div>
+              <!----Step4 disabled ---->
+              <div class="tab content4">
+                <h2>Step 4/4 - Payment</h2>
+                <h4>Progress</h4>
+                <div class="progressbar">
+                  <div class="progress-step4"></div>
+                </div>
+                <div class="">
+                  <p>This step was deleted from assignment</p>
+                </div>
+              </div>
+            </main>
+          </body>
+          </html>

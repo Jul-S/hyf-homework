@@ -29,7 +29,6 @@ h4 {
   border-radius: 0.2em;
   height:1.5em;
   width:100%;
-  color: white;
 }
 
 .progress-step1 {
@@ -82,14 +81,17 @@ h4 {
   100% { width: 100%; }
 }
 
-/**Styling tabs from inputs**/
+/**Ths part is an extra instructions in HOmework3
+- making TABs instead of  3 linked files
+
+Styling tabs from inputs**/
 main > input[type="radio"] {
   display: none; /* hide radio buttons */
 }
 
-main > input[type="radio"]:disabled {
-  pointer-events: none;
-}
+/* main > input[type="radio"]:disabled { disable some tabs if needed
+pointer-events: none;
+} */
 
 main > input[type="radio"] + label {
   display: inline-block; /* show labels in line */
@@ -102,7 +104,7 @@ main > input[type="radio"] + label {
   text-transform: uppercase;
   color: darkgrey;
 }
-main > input[type="radio"] ~ .tab {
+main > input[type="radio"] ~ div.tab {
   display: none; /* hide contents */
   border-top: 1px solid #999; /* grey line between tab and contents */
   padding: 1em;
@@ -120,59 +122,78 @@ main > input[type="radio"]:checked + label {     /* white background for selecte
 }
 
 /**Styling form elements**/
+
+/*layout for form*/
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+  margin: 2em;
+}
+
+.grid-col1 {
+  grid-column: 1;
+}
+
+.grid-col2 {
+  grid-column: 2;
+}
+
+.grid-col3 {
+  grid-column: 3;
+}
+
+.grid-col4 {
+  grid-column: 4;
+}
+
+.form3 div {
+  text-align: right;
+}
+
+
+/*styling form elemnts size font etc*/
 form label {
-  /* margin-left: 1em; */
   font-weight: bold;
   font-size: 1.1em;
-}
-
-.form-row {
-  display: flex;
-}
-
-.form-col1, .form-col2 {
-  flex: 50%;
   text-align: right;
 }
 
-.form-col-25 {
-  flex: 25%;
-  text-align: right;
-}
-
-.form-col-75 {
-  flex: 75%;
-}
-
-.description input {
-  height: 10em;
-}
-
-form input[type="text"] {
-  width: 15em;
+form input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
   height: 2em;
-  margin-bottom: 1em;
+}
+
+form input[type="checkbox"], input[type="radio"] {
+  transform: scale(1.8);
+}
+
+.form2 input[type="radio"] {
+  margin-right: 2em;
 }
 
 form select {
-  width: 15em;
   height: 2.5em;
-  margin-bottom: 1em;
+  flex: 25%;
 }
 
-label > p {
+form label > p {
   font-size: 0.8em;
   font-weight: normal;
   font-style: italic;
 }
 
-div .button {
-  background-color: grey;
+textarea {
+  grid-column: 2/ span 3; /*place textarea across 3 columns of grid*/
+  resize: none;
+}
+
+input[type="submit"] {
+  background-color: lightgrey;
   width: auto;
   float: right;
-  padding: 2em;
+  padding: 1em;
   margin: 2em;
   text-decoration: none;
-  color: black;
+  color: grey;
   font-weight: bold;
 }
