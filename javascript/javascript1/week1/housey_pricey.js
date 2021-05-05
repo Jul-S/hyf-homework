@@ -11,11 +11,18 @@ let volumeInMeters = depth * heght * width;
 let housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
 
 console.log(`Peter's house price should be ${housePrice}, and he paid ${paidPrice}`);
-
+//adding extra assignment condition 
+//since it repeats below this could be put in searate function later
+if (housePrice >= paidPrice) {
+    console.log("Thats a good price! You should buy it!")
+}
+else {
+    console.log("That is too expensive! You should not buy this house!");
+}
 //Julia`s case:
 width = 5;
 depth = 15;
-heght = 8;
+height = 8;
 gardenSizeInM2 = 70;
 paidPrice = 1_000_000;
 
@@ -25,6 +32,15 @@ volumeInMeters = depth * heght * width;
 housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
 
 console.log(`Julia's house price should be ${housePrice}, and she paid ${paidPrice}`);
+
+//adding extra assignment condition 
+//since it repeats this could be put in searate function later
+if (housePrice >= paidPrice) {
+    console.log("Thats a good price! You should buy it!")
+}
+else {
+    console.log("That is too expensive! You should not buy this house!");
+}
 
 
 
