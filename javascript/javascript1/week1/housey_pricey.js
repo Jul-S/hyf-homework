@@ -1,24 +1,24 @@
 //Peter`s case:
 let width = 8;
 let depth = 10;
-let heght = 10;
+let height = 10;
 let gardenSizeInM2 = 100;
 let paidPrice = 2_500_000;
 
 //First we calculte house volume:
-let volumeInMeters = depth * heght * width;
+let volumeInMeters = depth * height * width;
 // then use it in house price formula:
 let housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
 
-console.log(`Peter's house price should be ${housePrice}, and he paid ${paidPrice}`);
-//adding extra assignment condition 
-//since it repeats below this could be put in searate function later
+//adding extra assignment variable
+let shouldBuyTheHouse = false;
 if (housePrice >= paidPrice) {
-    console.log("Thats a good price! You should buy it!")
+    shouldBuyTheHouse = true;
 }
-else {
-    console.log("That is too expensive! You should not buy this house!");
-}
+
+console.log(`Peter's house price should be ${housePrice}, and he paid ${paidPrice}. 
+Peter should buy the house: ${shouldBuyTheHouse}`);
+
 //Julia`s case:
 width = 5;
 depth = 15;
@@ -27,20 +27,17 @@ gardenSizeInM2 = 70;
 paidPrice = 1_000_000;
 
 //First we calculte house volume:
-volumeInMeters = depth * heght * width;
+volumeInMeters = depth * height * width;
 // then use it in house price formula:
 housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
-
-console.log(`Julia's house price should be ${housePrice}, and she paid ${paidPrice}`);
-
-//adding extra assignment condition 
-//since it repeats this could be put in searate function later
+//adding extra assignment variable
+shouldBuyTheHouse = false;
 if (housePrice >= paidPrice) {
-    console.log("Thats a good price! You should buy it!")
+    shouldBuyTheHouse = true;
 }
-else {
-    console.log("That is too expensive! You should not buy this house!");
-}
+
+console.log(`Julia's house price should be ${housePrice}, and she paid ${paidPrice}.
+Julia should buy the house: ${shouldBuyTheHouse}`);
 
 
 
