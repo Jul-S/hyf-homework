@@ -1,14 +1,14 @@
 const class07Students = [];
 function addStudentToClass(studentName) {
     
-    if (class07Students.length === 6 && studentName !== "Queen Margrethe II") {
+    if (class07Students.length >= 6 && studentName !== "Queen Margrethe II") {
         console.log("Cannot add more students to class 07");
         return;
     } else if (class07Students.includes(studentName)) {
         console.log(`Student ${studentName} is already in the class`);
         return;
-    } else if (!studentName) {
-        console.log("You cannot add an empty string to a class");
+    } else if (!studentName || typeof studentName != "string") {
+        console.log("Please enter correct string as student name");
         return;
     }
 
