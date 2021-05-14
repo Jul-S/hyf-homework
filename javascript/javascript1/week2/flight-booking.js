@@ -12,9 +12,9 @@ function getFullname(firstname, surname, useFormalName, sex) {
         } else {
             return "Lord or Lady " + firstname + " " + surname;
         }
-    } else {
-        return firstname + " " + surname;
     }
+    
+    return firstname + " " + surname;
 }
 
 const fullname1 = getFullname("Benjamin", "Hughes", true, 'male');
