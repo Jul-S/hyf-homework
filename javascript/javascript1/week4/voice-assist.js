@@ -21,7 +21,7 @@ function getReply(command) {
 
     // first deal with full command string found in accepted commands
     if (Object.values(acceptedCommands).includes(com)) {
-        switch(com) {
+        switch (com) {
             case acceptedCommands.logMyName:
                 return myName ? `Your name is ${myName}` : "You did not introduce yourself yet!";
             case acceptedCommands.logToDo:
@@ -33,29 +33,29 @@ function getReply(command) {
                 toDos = [];
                 return "Hello what is your name?"
         }
-    // next deal with name saving
+        // next deal with name saving
     } else if (com.startsWith(acceptedCommands.hello)) {
         // checking if name already given
-        myName = myName ? 
-        `You already said your name is ${myName}` 
-        //works for name with few words with spaces, first I substring and capitalize Name again
-        : com.substring(acceptedCommands.hello.length).split(" ").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");        
+        myName = myName ?
+            `You already said your name is ${myName}`
+            //works for name with few words with spaces, first I substring and capitalize Name again
+            : com.substring(acceptedCommands.hello.length).split(" ").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
         return `Nice to meet you ${myName}`
-        
+
         // deal with toDos
         // parse comand string assuming all comands will end with "to/from my todo"
     } else if (com.startsWith(acceptedCommands.addToDo)) {
         const todo = com.replace("add ", "").replace(" to my todo", "");
         toDos.push(todo)
-        return  `Ok. ${todo} added to your todo`;
+        return `Ok. ${todo} added to your todo`;
     } else if (com.startsWith(acceptedCommands.removeToDo)) {
         const todo = com.replace("remove ", "").replace(" from my todo", "");
         const removed = toDos.filter(td => td === todo);
         return removed.length ? `Done. ${removed[0]} was removed from todo` : `Didn't find ${todo} in your todo.`
-        
+
         // calc and timer moved to another function for better readability
     } else if (com.startsWith(acceptedCommands.calc)) { // there other commands that start with "What is..." but they were dealed with before so only calc left
-      return getCalcResult(com.replace(acceptedCommands.calc, ""));  
+        return getCalcResult(com.replace(acceptedCommands.calc, ""));
     } else if (com.startsWith(acceptedCommands.timer)) {
         return startTimer(com.replace(acceptedCommands.timer, ""))
     } else {
@@ -70,12 +70,12 @@ function getCalcResult(expresion) {
     const expresionArray = expresion.split(" ");
     const errorMsg = "Cannot calculate that";
     if (expresionArray.length != 3) return errorMsg;
-    
+
     const a = Number(expresionArray[0]);
     const b = Number(expresionArray[2]);
     const sign = expresionArray[1];
-    
-    switch(sign) {
+
+    switch (sign) {
         case "+": return a + b;
         case "-": return a - b;
         case "*": return a * b;
@@ -87,7 +87,7 @@ function getCalcResult(expresion) {
 function startTimer(time) {
     //assuming we can set minutes or seconds
     const timeArray = time.split(" ");
-    const errorMsg = "Wrong timer format. Should be: [Number] [minutes/seconds]"; 
+    const errorMsg = "Wrong timer format. Should be: [Number] [minutes/seconds]";
     if (timeArray.length != 2) return errorMsg;
 
     let interval = 0;
@@ -107,14 +107,14 @@ function startTimer(time) {
 
 
 //testing
-console.log(getReply("Hello my name is Benjamin Button")); 
-console.log(getReply("What is my name??")); 
-console.log(getReply("what day is it today?")); 
+console.log(getReply("Hello my name is Benjamin Button"));
+console.log(getReply("What is my name??"));
+console.log(getReply("what day is it today?"));
 console.log(getReply("Add fishing to my todo"));
-console.log(getReply("Add singing in the shower to my todo")); 
+console.log(getReply("Add singing in the shower to my todo"));
 console.log(getReply("Remove fishing from my todo"));
 console.log(getReply("What is on my toDo"));
 console.log(getReply("Remove swiming from my todo"));
 console.log(getReply("what is 8 * 5"));
 console.log(getReply("What is 4 + 4"));
-console.log(getReply("Set a timer for 10 seconds")); 
+console.log(getReply("Set a timer for 10 seconds"));
