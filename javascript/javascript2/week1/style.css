@@ -1,0 +1,23 @@
+form {
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+}
+
+div {
+    margin: 3em 1em;
+    flex: 1;
+}
+
+input[type=button], input[type=text] {
+    margin: 2em 1em;
+    font-size: larger;
+}
+
+p {
+    font-size: 4em;
+    color:blue;
+}
