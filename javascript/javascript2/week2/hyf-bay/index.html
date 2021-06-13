@@ -1,0 +1,34 @@
+<head>
+    <title>HyfBay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,800"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Our Products</h1>
+    </header>
+    <main>
+      <input type="text" name="search" placeholder="Search for product" id="nameFilter">
+      <input type="text" name="search" placeholder="Max price" id="priceFilter">
+      <div class="radio-group">
+        <p>Sort by: </p>
+        <input type="radio" name="sort" id="sortName" value="name" checked>
+        <label for="sortName">Name</label>
+        <input type="radio" name="sort" id="sortPrice" value="price">
+        <label for="sortPrice">Price</label>
+        <input type="radio" name="sort" id="sortRating" value="rating">
+        <label for="sortRating">Rating</label>
+      </div>
+        <ul>           
+        </ul>
+    </main>
+    <footer>
+      Contact Us
+    </footer>
+    <script src="hyfBayHelpers.js"></script>
+    <script src="main.js"></script>
+  </body>

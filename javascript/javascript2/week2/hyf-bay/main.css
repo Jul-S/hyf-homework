@@ -1,0 +1,40 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #F9FBFD;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body, h1, h2 {
+    margin: 0;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+}
+
+li {
+    margin: 1em;
+    padding: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    flex: 20%;
+}
+
+body{
+    font-family: "Karma", sans-serif;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header, footer {
+    margin: auto;
+    padding: 2em;
+  }
+
+  input {
+      margin-bottom: 2em;
+  }
