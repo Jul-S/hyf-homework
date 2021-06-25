@@ -1,0 +1,24 @@
+{
+  "day": "wednesday",
+  "mealtime": "dinner",
+  "main dish": "pasta med laks",
+  "salad": {
+    "vegetables": [
+      "tomato",
+      "cucumber"
+    ],
+    "greens": "iceberg salad",
+    "extras": "mozarella cheese",
+    "dressing": "olive oil"
+  },
+  "fruits": [
+    "apple",
+    "orange",
+    "pear"
+  ],
+  "drinks": [
+    "juice",
+    "coffee"
+  ],
+  "dessert": "ice-cream"
+}
