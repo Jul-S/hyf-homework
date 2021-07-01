@@ -1,24 +1,24 @@
-const btn1 = document.getElementById('btnGetCity');
-const btn2 = document.getElementById('btnGetLoc');
+const btnGetCity = document.getElementById('btnGetCity');
+const btnGetLoc = document.getElementById('btnGetLoc');
 const displayMessage = document.getElementById("displayMessage");
 const displayWeather = document.getElementById("displayWeather");
 
 //onload show weather for saved city or location in localstorage
 window.onload = () => {
-    if (localStorage.getItem("city")) {
-        console.log(localStorage.getItem("city"));
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${localStorage.getItem("city")}&appid=e75ca172f74f2d4c651c1c428d8fac19&units=metric`
+    const localCity = localStorage.getItem("city");
+    const localLatitude = localStorage.getItem("lat");
+    const localLongitude = localStorage.getItem("lon");
+    if (localCity) {
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${localCity}&appid=e75ca172f74f2d4c651c1c428d8fac19&units=metric`
         fetchWeather(url);
-    } else if (localStorage.getItem("lat") && localStorage.getItem("lon")) {
-        console.log(localStorage.getItem("lat"));
-        console.log(localStorage.getItem("lon"));
-        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${localStorage.getItem("lat")}&lon=${localStorage.getItem("lon")}&appid=e75ca172f74f2d4c651c1c428d8fac19&units=metric`
+    } else if (localLatitude && localLongitude) {
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${localLatitude}&lon=${localLongitude}&appid=e75ca172f74f2d4c651c1c428d8fac19&units=metric`
         fetchWeather(url);
     }
 };
 
-btn1.addEventListener("click", getWeatherByCityName);
-btn2.addEventListener("click", getWeatherByGeoLoc);
+btnGetCity.addEventListener("click", getWeatherByCityName);
+btnGetLoc.addEventListener("click", getWeatherByGeoLoc);
 
 function getWeatherByCityName() {
     displayWeather.hidden = true;
@@ -52,19 +52,23 @@ function fetchWeather(url) {
     fetch(url)
         .then(res => res.json())
         .then(data => {
-            displayMessage.innerHTML = "";
-            displayWeather.hidden = false;
-            renderCityName(data.name);
-            renderTemp(data.main.temp);
-            renderIcon(data.weather[0].icon);
-            renderWindSpeed(data.wind.speed);
-            //adding my feature arroow pointing wind direction
-            renderWindDirection(data.wind.deg);
-            renderCloudness(data.clouds.all);
-            renderSunriseSunset(data.sys.sunrise, data.sys.sunset);
-            renderMap(data.coord.lat, data.coord.lon);
+            renderWeatherData(data);
         })
 
+}
+
+function renderWeatherData(data) {
+    displayMessage.innerHTML = "";
+    displayWeather.hidden = false;
+    renderCityName(data.name);
+    renderTemp(data.main.temp);
+    renderIcon(data.weather[0].icon);
+    renderWindSpeed(data.wind.speed);
+    //adding my feature arrow pointing wind direction
+    renderWindDirection(data.wind.deg);
+    renderCloudness(data.clouds.all);
+    renderSunriseSunset(data.sys.sunrise, data.sys.sunset);
+    renderMap(data.coord.lat, data.coord.lon);
 }
 
 function renderSunriseSunset(sunriseUnixTime, sunsetUnixTime) {
