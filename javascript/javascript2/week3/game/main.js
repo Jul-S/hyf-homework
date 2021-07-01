@@ -46,13 +46,25 @@ function startGame(timer) {
     //set button to reset
     btn.value = "Reset game";
     //activate players Name animation and count
+    renderPlayersActions();
+    //activate countdown message
+    renderCountDown(timer);
+    //activate event to listen to key press
+    document.addEventListener("keyup", countKeyPress);
+    //set timer to end game
+    endGame = setTimeout(finishGame, timer * 1000)
+}
+
+function renderPlayersActions() {
     const playersName = document.querySelectorAll("h2");
     playersName.forEach(title => title.classList.add("rotateText"));
     pCountS.innerHTML = countS;
     pCountL.innerHTML = countL;
-    //activate countdown message
+}
+
+function renderCountDown(timer) {
     let miliSecLeft = timer * 100;
-    //set interval to show count down
+
     countDown = setInterval(() => {
         miliSecLeft--;
         pUserMessage.innerHTML = `${Math.round(miliSecLeft / 100)}:${(miliSecLeft % 100 === 0) ? "00" : miliSecLeft % 100}`;
@@ -60,10 +72,6 @@ function startGame(timer) {
             clearInterval(countDown);
         }
     }, 10);
-    //activate event to listen to key press
-    document.addEventListener("keyup", countKeyPress);
-    //set timer to end game
-    endGame = setTimeout(finishGame, timer * 1000)
 }
 
 function finishGame() {
@@ -81,39 +89,49 @@ function finishGame() {
         winner = "bothPlayers"
         pUserMessage.innerHTML = "It`s a draw!"
     }
-    //figure out element to add confetti canvas   
+    addConfetti(winner);
+}
+
+function addConfetti(winner) {
     const winnerDiv = document.getElementById(winner);
     const canvas = document.createElement("canvas");
-    canvas.setAttribute("id", "confetti")
+    canvas.setAttribute("id", "confetti");
     winnerDiv.insertBefore(canvas, winnerDiv.firstChild);
     //setting confetti options
-    var confettiSettings = { target: "confetti", size: 2 };
-    var confetti = new ConfettiGenerator(confettiSettings);
+    const confettiSettings = { target: "confetti", size: 2 };
+    const confetti = new ConfettiGenerator(confettiSettings);
     confetti.render();
 }
 
 function resetGame() {
-    //stop listening to events
     document.removeEventListener("keyup", countKeyPress);
-    //delete player name animations
-    const playersName = document.querySelectorAll("h2");
-    playersName.forEach(title => title.classList.remove("rotateText"));
-    //clearing countdown interval and timeout for game end in case it wasn`t finished
+
+    clearPlayesrActions();
+
     clearTimeout(endGame);
+
     clearInterval(countDown);
-    //remove confetti
-    const canvas = document.getElementById("confetti");
-    //in case game was reset before end canvas=null, so no need to remove
-    if (canvas !== null) { canvas.remove(); }
-    //set button to start new game
+
+    clearConfetti();
+
     btn.value = "Start game!";
-    //reset user message
     pUserMessage.innerHTML = "Enter time and start the game!";
-    //reset count
+
     countS = 0;
     countL = 0;
     pCountS.innerHTML = countS;
     pCountL.innerHTML = countL;
-    //delete input of seconds
     document.getElementById("time").value = "";
 }
+
+function clearPlayesrActions() {
+    const playersName = document.querySelectorAll("h2");
+    playersName.forEach(title => title.classList.remove("rotateText"));
+}
+
+function clearConfetti() {
+    const canvas = document.getElementById("confetti");
+    //in case game was reset before end canvas=null, so no need to remove
+    if (canvas !== null) { canvas.remove(); }
+}
+
