@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Weather App</h1>
+    <form class="flex-column">
+        <div class="flex">
+            <input type="text" id="cityInput" placeholder="Enter your city">
+            <input type="button" id="btnGetCity" value="Check Weather in City">
+        </div>
+        <div class="flex">
+            <input type="button" id="btnGetLoc" value="Check Weather by my Location">
+        </div>
+    </form>
+    <div id="displayMessage"></div>
+    <div id="displayWeather" hidden>
+        <h1 id="city"></h1>
+        <div class="flex">
+            <span id="temp"></span>
+            <img src="" alt="icon" width="120px" height="120px">
+            <div class="flex-column">
+                <p id="wind"></p>
+                <!--  arrow to show wind direction  -->
+                <span id="arrow"></span>
+                <p id="clouds"></p>
+            </div>
+        </div>
+        <div>
+            <span id="sunrise"></span>
+            <span id="sunset"></span>
+        </div>
+        <div id="map"></div>
+    </div>
+</body>
+<script src="main.js"></script>
+
+</html>

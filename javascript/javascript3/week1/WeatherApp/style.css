@@ -1,0 +1,61 @@
+body {
+    background-color: beige;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    text-align: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    margin: 1em 1em;
+    font-size: larger;
+}
+
+input[type=button] {
+    background-color: cadetblue;
+    color: white;
+    padding: 15px 24px;
+    text-decoration: none;
+}
+
+#map {
+    margin: 2em auto;
+    height: 300px;
+    width: 300px;
+}
+
+#temp {
+    font-size: 80px;
+}
+
+/* arrow to show wind direction */
+
+#arrow:after {
+    content: "";
+    display: inline-block !important;
+    width: 0;
+    height: 0;
+    border-left: 8px solid black;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    vertical-align: middle;
+}
+
+#arrow:before {
+    width: 20px;
+    height: 2px;
+    background: black;
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+}
