@@ -23,9 +23,19 @@ class Circle {
 
 setInterval(renderCircles, 100);
 
+window.addEventListener("mousemove", updateCoordinates)
+
+function updateCoordinates(event) {
+    mouseX = event.offsetX;
+    mouseY = event.offsetY;
+}
+
+let mouseX = 0;
+let mouseY = 0;
+
 function renderCircles() {
-    const randomX = Math.floor(Math.random() * canvas.width);
-    const randomY = Math.floor(Math.random() * canvas.height);
+    const randomX = mouseX;
+    const randomY = mouseY;
     const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
     const c1 = new Circle(randomX, randomY, 20, 0, 2 * Math.PI, randomColor);
     c1.draw();
