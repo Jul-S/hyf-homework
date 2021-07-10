@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Fastest Presser in The Realm!</title>
+</head>
+
+<body>
+    <header>
+        <h1>Fastest Presser in The Realm!</h1>
+    </header>
+    <main>
+        <input type="number" name="time" min="1" id="time" placeholder="Set seconds">
+        <input type="button" value="Start game!" id="button">
+        <h3 id="message">Enter time and start the game!</h3>
+        <div class="container" id="bothPlayers">
+            <div class="left player" id="playerS">
+                <h2>Press S</h2>
+                <p id="countS">0</p>
+            </div>
+            <div class="right player" id="playerL">
+                <h2>Press L</h2>
+                <p id="countL">0</p>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.13/dist/index.min.js"></script>
+<script src="main.js"></script>
+
+</html>
