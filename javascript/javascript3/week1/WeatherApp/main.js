@@ -118,7 +118,7 @@ function renderCityName(cityName) {
 function renderMap(latitude, longitude) {
     //add script for map callback to document
     var script = document.createElement('script');
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDFGlu0GRChxbWdneIqV7lkJrS8B3Hw-ts&callback=initMap';
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=&callback=initMap';
     script.async = true;
     // attach initMap callback function to the `window` object
     window.initMap = function () {

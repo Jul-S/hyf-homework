@@ -12,7 +12,7 @@ function getGifBySearchWord() {
     const searchInput = document.getElementById("searchInput").value;
     if (searchInput) {
         displayResult.innerHTML = "Loading..."
-        const url = `https://api.giphy.com/v1/gifs/search?api_key=TiUGh7M7GYEDMAHpGFi43098D7Ort4ij&q=${searchInput}&lang=en`
+        const url = `https://api.giphy.com/v1/gifs/search?api_key=&q=${searchInput}&lang=en`
         fetchGifs(url);
     } else {
         displayResult.innerHTML = "Please specify search word first"
