@@ -14,7 +14,7 @@ CREATE TABLE `status` (
 CREATE TABLE `room` (
     `id` int(10) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `type` varchar(255) NOT NULL,
-    `NumberOfGuests` int(10) unsigned NOT NULL,
+    `number_of_guests` int(10) unsigned NOT NULL,
     `status_id` int(10) unsigned NOT NULL,
     CONSTRAINT `fk_status` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`) ON DELETE CASCADE
   ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;

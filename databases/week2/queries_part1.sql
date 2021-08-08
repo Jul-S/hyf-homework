@@ -1,5 +1,5 @@
 -- Add a task with these attributes: title, description, created, updated, due_date, status_id, user_id
-insert into
+INSERT INTO
   task (
     id,
     title,
