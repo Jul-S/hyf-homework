@@ -5,5 +5,12 @@
     "content": "Best meal ever",
     "mealId": 1,
     "createdAt": 12345
+  },
+  {
+    "id": 2,
+    "numberOfStars": 5,
+    "content": "I could not stop eating",
+    "mealId": 2,
+    "createdAt": 1321
   }
 ]

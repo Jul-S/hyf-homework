@@ -1,10 +1,18 @@
 [
     {
-        "id" : 1,
-        "title" : "Indian food in the summer",
-        "maxNumberOfGuests" : 5,
-        "description" : "A nice night out eating delicious indian food",
-        "createdAt" : "2019/12/7 14:34",
-        "price" : 67
+        "id": 1,
+        "title": "Indian food in the summer",
+        "maxNumberOfGuests": 5,
+        "description": "A nice night out eating delicious indian food",
+        "createdAt": "2019/12/7 14:34",
+        "price": 67
+    },
+    {
+        "id": 2,
+        "title": "BBQ ribs on the grill",
+        "maxNumberOfGuests": 10,
+        "description": "A nice day out enjoying a danish summer",
+        "createdAt": "2021/12/8 12:00",
+        "price": 150
     }
 ]
