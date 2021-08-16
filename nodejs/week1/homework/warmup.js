@@ -5,8 +5,8 @@ class Circle {
         this.radius = radius;
     }
     getDiameter() { return this.radius * 2 }
-    getCircumference() { return this.getDiameter() * Math.PI }
-    getArea() { return Math.PI * this.radius * this.radius }
+    getCircumference() { return Number(this.getDiameter() * Math.PI).toFixed(2) }
+    getArea() { return Number(Math.PI * Math.pow(this.radius, 2)).toFixed(2) }
 }
 
 const circle1 = new Circle(10);

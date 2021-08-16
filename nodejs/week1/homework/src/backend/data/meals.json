@@ -14,5 +14,21 @@
         "description": "A nice day out enjoying a danish summer",
         "createdAt": "2021/12/8 12:00",
         "price": 150
+    },
+    {
+        "id": 3,
+        "title": "Chiken nuggets",
+        "maxNumberOfGuests": 20,
+        "description": "See you in McDo",
+        "createdAt": "2021/20/8 12:00",
+        "price": 20
+    },
+    {
+        "id": 4,
+        "title": "Cheese sandwich",
+        "maxNumberOfGuests": 12,
+        "description": "Sandwich and tea",
+        "createdAt": "2021/12/9 12:00",
+        "price": 90
     }
 ]
