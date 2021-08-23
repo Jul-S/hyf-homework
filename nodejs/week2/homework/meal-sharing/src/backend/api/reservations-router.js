@@ -5,7 +5,7 @@ const reservations = require("./../data/reservations.json");
 
 router.get("/", async (request, response) => {
   try {
-    response.send({ data: reservations });
+    response.send(reservations);
   } catch (error) {
     throw response.send(400).json(error);
   }
@@ -20,7 +20,7 @@ router.get("/:id", async (request, response) => {
     if (reservation.length === 0)
       return response.status(200).json({ message: "No reservation with this id found" });
 
-    response.send({ data: reservation });
+    response.send(reservation[0]);
   } catch (error) {
     throw response.send(400).json(error);
   }
