@@ -11,10 +11,10 @@ app.get("/numbers/add", (req, res) => {
 });
 
 app.get("/numbers/multiply/:a/:b", (req, res) => {
-    if (isNaN(req.params.a) && isNaN(req.params.b))
+    if (isNaN(Number(req.params.a)) && isNaN(Number(req.params.b)))
         return res.status(406).json({ error: "Not a number" });
 
-    res.send(`Result: ${req.params.a + req.params.b}`)
+    res.send(`Result: ${Number(req.params.a) + Number(req.params.b)}`)
 });
 
 app.listen(3000, () => console.log(`Calculator:listening on port 3000`));
