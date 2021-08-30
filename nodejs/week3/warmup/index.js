@@ -28,11 +28,11 @@ app.get("/calculator/add", (req, res) => {
     res.send(`Sum: ${result}`)
 });
 
-app.post("/calculator/multiply", (req, res) => {
+app.post("/calculator/substract", (req, res) => {
     if (isNaN(Number(req.body.firstParam)) || isNaN(Number(req.body.secondParam)))
         return res.status(406).json({ error: "Not a number" });
 
-    const result = Number(req.body.firstParam) * Number(req.body.secondParam);
+    const result = Number(req.body.firstParam) - Number(req.body.secondParam);
 
     res.send(`Result: ${result}`)
 });
