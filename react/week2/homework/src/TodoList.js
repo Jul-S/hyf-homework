@@ -5,7 +5,6 @@ import getTodos from './getTodos'
 
 function TodoList() {
     const [todos, updateTodos] = useState(getTodos());
-    console.log(todos);
 
     function addRandomTodo(todos, updateTodos) {
         const newTodos = todos.concat({ id: generateUniqeId(), description: 'random todo' });
@@ -27,7 +26,8 @@ function TodoList() {
             <Counter />
             <button onClick={() => addRandomTodo(todos, updateTodos)}>Add todo</button>
             <ul>
-                {todos.map((aTodo) => <TodoItem key={generateUniqeId()} radioId={aTodo.id} text={aTodo.description} onRemove={() => handleRemove(aTodo.id)} />)}
+                {(todos.length < 1) ? 'Empty list' :
+                    todos.map((aTodo) => <TodoItem key={generateUniqeId()} radioId={aTodo.id} text={aTodo.description} onRemove={() => handleRemove(aTodo.id)} />)}
             </ul>
         </div >
     )
