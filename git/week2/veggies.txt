@@ -1,5 +1,5 @@
 beetroots
 onions
-carrots
+carrot
 potatoes
 cabbage
