@@ -1,5 +1,7 @@
 beetroots
 onions
-carrot
+zuccini
 potatoes
 cabbage
+carrots
+peppers
