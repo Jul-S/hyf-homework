@@ -1,0 +1,11 @@
+.complete {
+  text-decoration: line-through;
+}
+
+#todo_desc {
+  display: block;
+}
+
+.children {
+  border: 1px solid black;
+}
